@@ -11,7 +11,7 @@ const PhotoGallery = (props: IPhotoGalleryProps) => {
 
   useMemo(() => {
     if (sol > 0 && sol < props.manifest?.max_sol) {
-      fetch(`${URLs.photos_by_sol}/?sol=${sol}&api_key=${APIKeys.NASA}`)
+      fetch(`${URLs.photos_base}/${props.manifest?.name}/photos/?sol=${sol}&api_key=${APIKeys.NASA}`)
         .then((res) => res.json())
         .then((result) => {
           setPhotos(result["photos"]);
@@ -27,7 +27,6 @@ const PhotoGallery = (props: IPhotoGalleryProps) => {
   }, []);
 
   const photoElements: JSX.Element[] = photos.map((photo: any, index: any) => {
-    console.log(galleryWidth, galleryWidth / 4);
     return (
       <a href={photo.img_src} target="_blank" rel="noreferrer">
         <img

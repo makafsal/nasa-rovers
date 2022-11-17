@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import roverIcon from "../../../assets/images/rover/mars-rover.png";
+import HeroLargeButton from "../HeroLargeButton/HeroLargeButton";
 
 const Hero = () => (
   <>
@@ -13,36 +13,29 @@ const Hero = () => (
     </video>
     <div className="video-overlay"></div>
     <div className="hero vh-100">
-      <div className="container position-relative">
-        <div className="row text-center pt-5">
+      <div className="container position-relative py-5 mt-5">
+        <div className="row text-center mt-5 pt-5">
           <div className="col">
             <h1 className="hero-title text-white">NASA ROVERS</h1>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row text-center mt-5 text-white">
+          This site provides information on Mars rovers by NASA consumed from
+          the NASA rovers API. Also, this site fetches and displays the Mars
+          weather from NASA InSight API.
+        </div>
+        <div className="row mt-5 pt-5">
           <div className="col col-lg3">
-            <button className="btn bg-light">
-              <img src={roverIcon} alt="🤖" />
-              <span className="mx-3"> PERSEVERANCE</span>
-            </button>
+            <HeroLargeButton name="PERSEVERANCE" />
           </div>
           <div className="col col-lg3">
-            <button className="btn bg-light">
-              <img src={roverIcon} alt="🤖" />
-              <span className="mx-3"> CURIOSITY</span>
-            </button>
+            <HeroLargeButton name="CURIOSITY" />
           </div>
           <div className="col col-lg3">
-            <button className="btn bg-light">
-              <img src={roverIcon} alt="🤖" />
-              <span className="mx-3"> SPIRIT</span>
-            </button>
+            <HeroLargeButton name="SPIRIT" />
           </div>
           <div className="col col-lg3">
-            <button className="btn bg-light">
-              <img src={roverIcon} alt="🤖" />
-              <span className="mx-3"> OPPORTUNITY</span>
-            </button>
+            <HeroLargeButton name="OPPORTUNITY" />
           </div>
         </div>
       </div>

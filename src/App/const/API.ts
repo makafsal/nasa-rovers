@@ -5,5 +5,5 @@ export enum APIKeys {
 
 export enum URLs {
   rover_manifests = "https://api.nasa.gov/mars-photos/api/v1/manifests",
-  photos_by_sol = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos" 
+  photos_base = "https://api.nasa.gov/mars-photos/api/v1/rovers"
 }

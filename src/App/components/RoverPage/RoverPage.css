@@ -1,0 +1,10 @@
+.detail-bar {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(245, 245, 245, 1) 100%
+  );
+  box-shadow: -15px 0px 20px 10px rgb(0 0 0 / 30%);
+  border-right: 1px solid #dddddd;
+}

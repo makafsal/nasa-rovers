@@ -1,5 +1,6 @@
 export enum APIKeys {
-  NASA = "0FyQesBqt5yYbDGk0aLy9TYryHQvRRpOtomFZVEA"
+  // NASA = "0FyQesBqt5yYbDGk0aLy9TYryHQvRRpOtomFZVEA"
+  NASA = "DEMO_KEY"
 }
 
 export enum URLs {

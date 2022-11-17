@@ -1,0 +1,12 @@
+.photo-tile {
+  background-position: center;
+  background-size: cover;
+  display: inline-flex;
+  background-repeat: no-repeat;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}

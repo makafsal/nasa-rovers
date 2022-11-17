@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App/App";
 import reportWebVitals from "./reportWebVitals";
+import RoverPage from "./App/components/RoverPage/RoverPage";
+import ErrorPage from "./App/components/ErrorPage/ErrorPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,6 +16,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/rovers/:rover",
+    element: <RoverPage />,
+  },
+  {
+    path: "/err",
+    element: <ErrorPage />,
   },
 ]);
 

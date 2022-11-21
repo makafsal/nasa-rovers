@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { APIKeys, URLs } from "../../const/API";
 import Filters from "./Filters/Filters";
 import "./PhotoGallery.css";
@@ -11,7 +11,9 @@ const PhotoGallery = (props: IPhotoGalleryProps) => {
 
   useMemo(() => {
     if (sol > 0 && sol < props.manifest?.max_sol) {
-      fetch(`${URLs.photos_base}/${props.manifest?.name}/photos/?sol=${sol}&api_key=${APIKeys.NASA}`)
+      fetch(
+        `${URLs.photos_base}/${props.manifest?.name}/photos/?sol=${sol}&api_key=${APIKeys.NASA}`
+      )
         .then((res) => res.json())
         .then((result) => {
           setPhotos(result["photos"]);
@@ -22,20 +24,18 @@ const PhotoGallery = (props: IPhotoGalleryProps) => {
     }
   }, [sol, props]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setGalleryWidth(galleryElemRef.current.offsetWidth || 0);
   }, []);
 
   const photoElements: JSX.Element[] = photos.map((photo: any, index: any) => {
     return (
-      <a href={photo.img_src} target="_blank" rel="noreferrer">
+      <a href={photo.img_src} target="_blank" rel="noreferrer" key={photo.id}>
         <img
           className="photo-tile"
-          key={photo.id}
           style={{
             height: "300px",
-            width: `${galleryWidth / 5 + 45}px`,
-            // backgroundImage: `url("${photo.img_src}")`,
+            width: `${galleryWidth / 5 + 40}px`,
           }}
           src={photo.img_src}
           alt=""
